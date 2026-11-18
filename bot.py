@@ -75,7 +75,6 @@ async def today(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(msg)
 
 def main():
-    print("Bot Running... PC off cheyaku", flush=True)
     app = Application.builder().token(TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("trade", trade))
