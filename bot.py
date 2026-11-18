@@ -1,3 +1,4 @@
+import asyncio
 import os
 from datetime import datetime
 from threading import Thread
@@ -79,6 +80,8 @@ def main():
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("trade", trade))
     app.add_handler(CommandHandler("today", today))
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
     app.run_polling()
 
 if __name__ == "__main__":
